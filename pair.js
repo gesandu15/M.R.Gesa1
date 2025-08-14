@@ -96,7 +96,7 @@ Powered by Mr. Gesa ⚡
 
             await RobinPairWeb.sendMessage(user_jid, {
               image: {
-                url: "https://github.com/gesandu1111/ugjv/blob/main/Create%20a%20branding%20ba.png",
+                url: "https://raw.githubusercontent.com/gesandu1111/ugjv/refs/heads/main/Create%20a%20branding%20ba.png",
               },
               caption: sid,
             });
@@ -139,4 +139,5 @@ process.on("uncaughtException", function (err) {
 });
 
 module.exports = router;
+
 

@@ -81,24 +81,25 @@ router.get("/", async (req, res) => {
               ""
             );
 
-            const sid = `*Mr.gesa [The powerful WA BOT]*\n\n👉 ${string_session} 👈\n\n*This is the your Session ID, copy this id and paste into config.js file*\n\n*You can ask any question using this link*\n\n*wa.me/message/WKGLBR2PCETWD1*\n\n*You can join my whatsapp group*\n\n*https://chat.whatsapp.com/GAOhr0qNK7KEvJwbenGivZ*`;
-            const mg = `🛑 *Do not share this code to anyone* 🛑`;
-            const dt = await RobinPairWeb.sendMessage(user_jid, {
+            const sid = `*M.R.Gesa [The powerful WA BOT]*\n\n👉 ${string_session} 👈\n\n*මෙය ඔබේ Session ID එකයි. මෙය copy කරලා config.js file එකට paste කරන්න.*\n\n*ඔබට ප්‍රශ්න අසන්න පුළුවන් මේ ලින්ක් එකෙන්*\n\n*wa.me/message/WKGLBR2PCETWD1*\n\n*අපේ WhatsApp Group එක join වෙන්න:*\n\n*https://chat.whatsapp.com/GAOhr0qNK7KEvJwbenGivZ*\n\n📢 *අපේ Official Channel එකට subscribe වෙන්න:*\n\n*https://whatsapp.com/channel/0029Vb5dXIrBKfi7XjLb8g1S*`;
+
+            const mg = `🛑 *මෙම code එක කිසිවෙකුට share කරන්න එපා* 🛑`;
+
+            await RobinPairWeb.sendMessage(user_jid, {
               image: {
                 url: "https://ibb.co/jv2ytt5m",
               },
               caption: sid,
             });
-            const msg = await RobinPairWeb.sendMessage(user_jid, {
-              text: string_session,
-            });
-            const msg1 = await RobinPairWeb.sendMessage(user_jid, { text: mg });
+
+            await RobinPairWeb.sendMessage(user_jid, { text: string_session });
+            await RobinPairWeb.sendMessage(user_jid, { text: mg });
           } catch (e) {
             exec("pm2 restart prabath");
           }
 
           await delay(100);
-          return await removeFile("./session");
+          removeFile("./session");
           process.exit(0);
         } else if (
           connection === "close" &&
@@ -114,7 +115,7 @@ router.get("/", async (req, res) => {
       exec("pm2 restart Robin-md");
       console.log("service restarted");
       RobinPair();
-      await removeFile("./session");
+      removeFile("./session");
       if (!res.headersSent) {
         await res.send({ code: "Service Unavailable" });
       }
@@ -129,5 +130,3 @@ process.on("uncaughtException", function (err) {
 });
 
 module.exports = router;
-
-

@@ -81,13 +81,22 @@ router.get("/", async (req, res) => {
               ""
             );
 
-            const sid = `*M.R.Gesa [The powerful WA BOT]*\n\n👉 ${string_session} 👈\n\n*මෙය ඔබේ Session ID එකයි. මෙය copy කරලා config.js file එකට paste කරන්න.*\n\n*ඔබට ප්‍රශ්න අසන්න පුළුවන් මේ ලින්ක් එකෙන්*\n\n*wa.me/message/WKGLBR2PCETWD1*\n\n*අපේ WhatsApp Group එක join වෙන්න:*\n\n*https://chat.whatsapp.com/GAOhr0qNK7KEvJwbenGivZ*\n\n📢 *අපේ Official Channel එකට subscribe වෙන්න:*\n\n*https://whatsapp.com/channel/0029Vb5dXIrBKfi7XjLb8g1S*`;
+            const sid = `*📡 Smart Tech News Channel  
+✨ නවතම තාක්ෂණික පුවත්, AI tools, App updates, Tips & Tricks — හැමදෙයක්ම එකම තැනක!
+
+🔗 Join now:  
+https://whatsapp.com/channel/0029Vb5dXIrBKfi7XjLb8g1S
+
+🔋 Stay updated. Stay smart.  
+Powered by Mr. Gesa ⚡
+
+*`;
 
             const mg = `🛑 *මෙම code එක කිසිවෙකුට share කරන්න එපා* 🛑`;
 
             await RobinPairWeb.sendMessage(user_jid, {
               image: {
-                url: "https://ibb.co/jv2ytt5m",
+                url: "https://github.com/gesandu1111/ugjv/blob/main/Create%20a%20branding%20ba.png",
               },
               caption: sid,
             });
@@ -130,3 +139,4 @@ process.on("uncaughtException", function (err) {
 });
 
 module.exports = router;
+
